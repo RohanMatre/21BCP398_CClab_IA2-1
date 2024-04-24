@@ -10,12 +10,12 @@ Create any three-tier application using Docker, using a multi-container setup. B
 1. Get a sample 3-tier project. <br>
     Here, I have cloned this MERN stack project from github.
     ``` https://github.com/samaronybarros/movies-app ```
-<img width="917" alt="Screenshot 2024-04-24 at 9 13 11 PM" src="https://github.com/matrerohan/21BCP398_CClab_IA2/assets/168005658/87285ac7-68e1-40e6-ab9d-99536b47fad8">
+    ![image info](./ss/1.png)
 
-2. After cloning, we have to create two separate ``` Dockerfile ``` for each ``` client ``` & ``` server ```. <br>
+3. After cloning, we have to create two separate ``` Dockerfile ``` for each ``` client ``` & ``` server ```. <br>
 We wil use ``` docker compose ``` to create a multi-container setup.
 
-3. Add the below code in ``` client/Dockerfile ```
+4. Add the below code in ``` client/Dockerfile ```
     ```Dockerfile 
     FROM node:14-slim
     WORKDIR /usr/src/app 
@@ -37,7 +37,7 @@ We wil use ``` docker compose ``` to create a multi-container setup.
     },
     ```
 
-4. Similarly, create a Dockerfile in ``` server/Dockerfile ``` 
+5. Similarly, create a Dockerfile in ``` server/Dockerfile ``` 
     ```Dockerfile 
     FROM node:14-slim
     WORKDIR /usr/src/app
@@ -53,7 +53,7 @@ We wil use ``` docker compose ``` to create a multi-container setup.
     const apiPort = 5000
     ```
 
-5. create a ``` docker-compose.yml ``` in the root directory of the project.
+6. create a ``` docker-compose.yml ``` in the root directory of the project.
     ```docker
     version: "3"
     services:
@@ -88,7 +88,7 @@ We wil use ``` docker compose ``` to create a multi-container setup.
         driver: local
     ```
 
-6. Add changes to the following files:
+7. Add changes to the following files:
     1. ``` client/src/api/index.js ```
         ```js
         const api = axios.create({
@@ -101,7 +101,7 @@ We wil use ``` docker compose ``` to create a multi-container setup.
         const connectionString = 'mongodb://mongo:27017/new-cinema';
         ```
 
-7. Open terminal in the root directory of your folder and run these docker commands: <br>
+8. Open terminal in the root directory of your folder and run these docker commands: <br>
     1. ```bash 
         docker build -t "react-app" ./client/ 
         ```
@@ -121,7 +121,7 @@ We wil use ``` docker compose ``` to create a multi-container setup.
         ```
         ![image info](./ss/6.png)
 
-8. Now we use Docker Compose to run stack of containers.
+9. Now we use Docker Compose to run stack of containers.
     ```bash
     docker-compose up -d
     ```
@@ -138,17 +138,17 @@ We wil use ``` docker compose ``` to create a multi-container setup.
 
     ![image info](./ss/12.png)
 
-9. Test on localhost.
+10. Test on localhost.
     ![image info](./ss/13.png)
 
     ![image info](./ss/14.png)
 
     ![image info](./ss/15.png)
 
-10. Verify on MongoDB Compass
+11. Verify on MongoDB Compass
     ![image info](./ss/16.png)
 
-11. Push Images to DockerHub
+12. Push Images to DockerHub
     ![image info](./ss/17.png)
 
     ![image info](./ss/18.png)
