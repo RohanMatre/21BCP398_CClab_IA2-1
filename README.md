@@ -138,19 +138,12 @@ We wil use ``` docker compose ``` to create a multi-container setup.
 
     ![image info](./ss/12.png)
 
-10. Test on localhost.
+10. Verify on MongoDB Compass
     ![image info](./ss/13.png)
 
+11. Push Images to DockerHub
     ![image info](./ss/14.png)
 
     ![image info](./ss/15.png)
 
-11. Verify on MongoDB Compass
     ![image info](./ss/16.png)
-
-12. Push Images to DockerHub
-    ![image info](./ss/17.png)
-
-    ![image info](./ss/18.png)
-
-    ![image info](./ss/19.png)
